@@ -2,9 +2,9 @@ const http = new HappyHTTP();
 
 // GET USER
 
-http.get('https://jsonplaceholder.typicode.com/users/2')
-	.then(data => console.log(data))
-	.catch(err => console.log(err))
+// http.get('https://jsonplaceholder.typicode.com/users/1')
+// 	.then(data => console.log(data))
+// 	.catch(err => console.log(err))
 
 const data = {
 	name: 'John Doe Doe',

@@ -20,8 +20,8 @@ class HappyHTTP {
 			body: JSON.stringify(data)
 		});
 		
-		const data = await res.json();
-		return data;
+		const user = await res.json();
+		return user;
 	}
 	// put
 	async put(url, data) {
@@ -33,11 +33,11 @@ class HappyHTTP {
 			body: JSON.stringify(data)
 		});
 		
-		const data = await res.json();
-		return data;
+		const user = await res.json();
+		return user;
 	}
 	// delete
-	delete(url) {
+	async delete(url) {
 		const res = await fetch(url, {
 			method: 'DELETE'
 		});
