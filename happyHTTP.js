@@ -1,57 +1,48 @@
-// @version 1.0
+// @version 2.0
 // @author Francisco Dev Studio
 // @license MIT
 
 class HappyHTTP {
 	// prototypal methods
-	get(url) {
-		return new Promise((resolve, reject) => {
-			fetch(url)
-				.then(res => res.json())
-				.then(data => resolve(data))
-				.catch(err => reject(err))
-		})
+	async get(url) {
+		const res = await fetch(url);
+		const data = await res.json();
+		return data;
 	}
 
 	// post 
-	post(url, data) {
-		return new Promise((resolve, reject) => {
-			fetch(url, {
-				method: 'POST',
-				headers: {
-					'Content-type': 'application/json'
-				},
-				body: JSON.stringify(data)
-			})
-				.then(res => res.json())
-				.then(data => resolve(data))
-				.catch(err => reject(err))
-		})
+	async post(url, data) {
+		const res = await fetch(url, {
+			method: 'POST',
+			headers: {
+				'Content-type': 'application/json'
+			},
+			body: JSON.stringify(data)
+		});
+		
+		const data = await res.json();
+		return data;
 	}
 	// put
-	put(url, data) {
-		return new Promise((resolve, reject) => {
-			fetch(url, {
-				method: 'PUT',
-				headers: {
-					'Content-type': 'application/json'
-				},
-				body: JSON.stringify(data)
-			})
-				.then(res => res.json())
-				.then(data => resolve(data))
-				.catch(err => reject(err))
-		})
+	async put(url, data) {
+		const res = await fetch(url, {
+			method: 'PUT',
+			headers: {
+				'Content-type': 'application/json'
+			},
+			body: JSON.stringify(data)
+		});
+		
+		const data = await res.json();
+		return data;
 	}
 	// delete
 	delete(url) {
-		return new Promise((resolve, reject) => {
-			fetch(url, {
-				method: 'DELETE'
-			})
-				.then(res => res.json())
-				.then(() => resolve('User Deleted...'))
-				.catch(err => reject(err))
-		})
+		const res = await fetch(url, {
+			method: 'DELETE'
+		});
+		
+		const data = await 'Resource Deleted...';
+		return data;
 	}
 }
