@@ -1,4 +1,6 @@
 // @version 1.0
+// @author Francisco Dev Studio
+// @license MIT
 
 class HappyHTTP {
 	// prototypal methods
